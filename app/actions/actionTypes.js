@@ -1,0 +1,4 @@
+export const GET_ROUTE  = 'GET ROUTE';
+export const GET_ROUTE_SUCCES = 'GET_ROUTE_SUCCES'
+export const LOADING  = 'LOADING';
+export const RECENT_ROUTES_SUCCESS = 'RECENT_ROUTES_SUCCESS';
