@@ -4,7 +4,9 @@
   "description": "progressive webapp about trains",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack-dev-server --port 8080 --hot --inline --progress",
+    "serve-production": "set NODE_ENV=production && webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +22,6 @@
     "lodash": "^4.16.6",
     "moment": "^2.15.2",
     "node-sass": "^3.10.1",
-    "ns-api": "^2.0.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
