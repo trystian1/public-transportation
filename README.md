@@ -11,10 +11,15 @@ npm install
 ```
 
 # Running
-
+To start the application in development mode, run the following command
 ```sh
-webpack-dev-server
+npm run serve
 ```
+To start the application in production mode, run the following command
+```sh
+npm run serve-production
+```
+
 # Offline functionality
 When the user is offline it will show the application as cached in the
 browser cache. using the caches api and a service worker to serve the cached files.
