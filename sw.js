@@ -1,9 +1,9 @@
-var cacheName = 'cache-v3';
+var currentCacheName = 'cache-v5';
 
 self.addEventListener('install', function(event) {
   console.log('INSTALL');
   event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
+    caches.open(currentCacheName).then(function(cache) {
       return cache.addAll([
         '/skeleton',
         '../fonts/style.css',
@@ -31,4 +31,19 @@ self.addEventListener('fetch', function(event) {
     })
   );
 
+});
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('cache-') &&
+                 cacheName !== currentCacheName
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
 });
